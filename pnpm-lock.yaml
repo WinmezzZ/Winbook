@@ -4,6 +4,11 @@ settings:
   autoInstallPeers: true
   excludeLinksFromLockfile: false
 
+patchedDependencies:
+  react-native-static-server@0.5.0:
+    hash: ogyysa7l6lp2mwldjion6rqd6y
+    path: patches/react-native-static-server@0.5.0.patch
+
 dependencies:
   '@react-native-async-storage/async-storage':
     specifier: ^1.19.3
@@ -38,6 +43,9 @@ dependencies:
   react-native-fs:
     specifier: ^2.20.0
     version: 2.20.0(react-native@0.72.4)
+  react-native-network-info:
+    specifier: ^5.2.1
+    version: 5.2.1(react-native@0.72.4)
   react-native-reanimated:
     specifier: ^3.5.1
     version: 3.5.1(@babel/core@7.22.17)(@babel/plugin-proposal-nullish-coalescing-operator@7.18.6)(@babel/plugin-proposal-optional-chaining@7.21.0)(@babel/plugin-transform-arrow-functions@7.22.5)(@babel/plugin-transform-shorthand-properties@7.22.5)(@babel/plugin-transform-template-literals@7.22.5)(react-native@0.72.4)(react@18.2.0)
@@ -47,12 +55,18 @@ dependencies:
   react-native-screens:
     specifier: ^3.25.0
     version: 3.25.0(react-native@0.72.4)(react@18.2.0)
+  react-native-static-server:
+    specifier: ^0.5.0
+    version: 0.5.0(patch_hash=ogyysa7l6lp2mwldjion6rqd6y)(react-native@0.72.4)(react@18.2.0)
   react-native-vector-icons:
     specifier: ^10.0.0
     version: 10.0.0
   react-native-webview:
     specifier: ^13.6.0
     version: 13.6.0(react-native@0.72.4)(react@18.2.0)
+  react-native-wifi-reborn:
+    specifier: ^4.8.3
+    version: 4.8.3(react-native@0.72.4)
   tailwind-merge:
     specifier: ^1.14.0
     version: 1.14.0
@@ -6046,6 +6060,14 @@ packages:
       utf8: 3.0.0
     dev: false
 
+  /react-native-network-info@5.2.1(react-native@0.72.4):
+    resolution: {integrity: sha512-iam74xXtrSqqZurCl1/bSjZ9jXcsJY84g7brx1/4uVGCY26c6m+4CArHNSHOsz5ATg2NQT+81sjNy0KlCPyK4g==}
+    peerDependencies:
+      react-native: '>=0.47'
+    dependencies:
+      react-native: 0.72.4(@babel/core@7.22.17)(@babel/preset-env@7.22.15)(react@18.2.0)
+    dev: false
+
   /react-native-reanimated@3.5.1(@babel/core@7.22.17)(@babel/plugin-proposal-nullish-coalescing-operator@7.18.6)(@babel/plugin-proposal-optional-chaining@7.21.0)(@babel/plugin-transform-arrow-functions@7.22.5)(@babel/plugin-transform-shorthand-properties@7.22.5)(@babel/plugin-transform-template-literals@7.22.5)(react-native@0.72.4)(react@18.2.0):
     resolution: {integrity: sha512-ZBTOKibTn1IR5IaoQkpPCibuao5SjXR6Pzx+KHM50wrvBnL1PecsnQjmL2VEj8hbwshrzgRGgGt1XM82DKrykw==}
     peerDependencies:
@@ -6094,6 +6116,17 @@ packages:
       warn-once: 0.1.1
     dev: false
 
+  /react-native-static-server@0.5.0(patch_hash=ogyysa7l6lp2mwldjion6rqd6y)(react-native@0.72.4)(react@18.2.0):
+    resolution: {integrity: sha512-RGteckPoBZq48p9Y8V67bjZGPxLHKkEOAffLSUJiGC7hkx+H+zuekqCR+04F30NuWB7y+nb8N7Qld2RGjX5DNg==}
+    peerDependencies:
+      react: '*'
+      react-native: '*'
+    dependencies:
+      react: 18.2.0
+      react-native: 0.72.4(@babel/core@7.22.17)(@babel/preset-env@7.22.15)(react@18.2.0)
+    dev: false
+    patched: true
+
   /react-native-vector-icons@10.0.0:
     resolution: {integrity: sha512-efMOVbZIebY8RszZPzPBoXi9pvD/NFYmjIDYxRoc9LYSzV8rMJtT8FfcO2hPu85Rn2x9xktha0+qn0B7EqMAcQ==}
     hasBin: true
@@ -6111,6 +6144,14 @@ packages:
       escape-string-regexp: 2.0.0
       invariant: 2.2.4
       react: 18.2.0
+      react-native: 0.72.4(@babel/core@7.22.17)(@babel/preset-env@7.22.15)(react@18.2.0)
+    dev: false
+
+  /react-native-wifi-reborn@4.8.3(react-native@0.72.4):
+    resolution: {integrity: sha512-vmFjrfIMFCfbPM5aOTR0c8Z9Dc9UKDHGSEb665HvyHwe/2WLOVM4+olZXLUD77flsBLBl4B0LE8sdwkMFVwNBw==}
+    peerDependencies:
+      react-native: '>=0.13'
+    dependencies:
       react-native: 0.72.4(@babel/core@7.22.17)(@babel/preset-env@7.22.15)(react@18.2.0)
     dev: false
 
