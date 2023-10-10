@@ -1,25 +1,31 @@
-import React, { useEffect } from 'react';
+import express from 'express';
+import React, { useEffect, useState } from 'react';
 import { Text, View } from 'react-native';
-// import {NetworkInfo} from 'react-native-network-info';
-import RNFS from 'react-native-fs';
-import StaticServer from 'react-native-static-server';
+import { NetworkInfo } from 'react-native-network-info';
 
 export function MallPage() {
+  const [ip, setIp] = useState<string>();
+  const [file, setFile] = useState<any>();
+
   useEffect(() => {
-    const path = RNFS.DocumentDirectoryPath;
+    const server = express();
 
-    const server = new StaticServer(12345, path, { keepAlive: true });
+    server.post('/upload', async (req, res) => {
+      console.log(req);
+      // do something
 
-    console.log('serverserverserverserverserverserverserver', server);
-
-    server.start().then(url => {
-      console.log('Serving at URL', url);
+      return res.json({ message: 'OK' });
+    });
+    const app = server.listen(12345, () => {
+      console.log(`server start on 12345`);
     });
 
-    // 获取设备的IP地址
+    NetworkInfo.getIPV4Address().then(ip => {
+      setIp(ip || undefined);
+    });
 
     return () => {
-      server.stop();
+      app.close();
     };
   }, []);
 
